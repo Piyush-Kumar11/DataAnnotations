@@ -29,8 +29,8 @@ namespace DataAnnotations
                 Phone = phone
             };
 
-            var context = new ValidationContext(user);
-            var results = new List<ValidationResult>();
+            ValidationContext context = new ValidationContext(user);
+            List<ValidationResult> results = new List<ValidationResult>();
             bool isValid = Validator.TryValidateObject(user, context, results, true);
 
             if (isValid)
@@ -40,11 +40,11 @@ namespace DataAnnotations
             else
             {
                 Console.WriteLine("Data not valid");
-            }
-
-            foreach(var i in results)
-            {
-                Console.WriteLine(i.ErrorMessage);
+                //It will print the error messages for each validation stored in a list of Validation Results
+                foreach (var i in results)
+                {
+                    Console.WriteLine(i.ErrorMessage);
+                }
             }
         }
     }
