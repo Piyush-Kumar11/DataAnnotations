@@ -18,9 +18,11 @@ namespace DataAnnotations
         [StringLength(25,MinimumLength = 4,ErrorMessage ="Name should minimum contains 4 characters")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Email is required!")]
         [EmailAddress(ErrorMessage="Email is not valid!")]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Phone is required!")]
         [Phone(ErrorMessage ="Enter valid Phone number")]
         public string Phone { get; set; }
 
